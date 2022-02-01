@@ -6,8 +6,8 @@ Anime watching app. Catalog based on jikan v3 api.
 
 * no **ads**
 * updates without official application stores
-* sub spanish
-* sub english
+* sub Spanish
+* sub English
 
 # ToDo
 
@@ -15,5 +15,5 @@ Anime watching app. Catalog based on jikan v3 api.
 * [ ] Windows app.
 * [ ] List of anime suggestions in each anime page.
 * [ ] Clean the code.
-* [ ] Imprube sqlite db.
+* [ ] Improve sqlite db.
 * [ ] Save watched chapters.
