@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(anime_seasons LANGUAGES CXX)
 
-set(BINARY_NAME "anime_seasons")
+set(BINARY_NAME "AnimeSeasons")
 
 cmake_policy(SET CMP0063 NEW)
 

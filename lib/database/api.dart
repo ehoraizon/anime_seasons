@@ -11,12 +11,9 @@ import 'package:http/http.dart' as http;
 
 import "./errors.dart";
 
-/**
- * 
- * JIKAN API LIMIT :
- * 30 requests per minute
- * 2  requests per second 
- */
+/// JIKAN API LIMIT :
+/// 30 requests per minute
+/// 2  requests per second
 
 class ApiDB {
   late Database _db;

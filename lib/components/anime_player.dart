@@ -48,7 +48,7 @@ class _AnimePlayerState extends State<AnimePlayer> {
         ),
         body: _chewieController != null
             ? Chewie(controller: _chewieController!)
-            : SizedBox());
+            : const SizedBox());
   }
 
   @override

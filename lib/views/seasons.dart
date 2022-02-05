@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:anime_seasons/components/anime_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:animated_floating_buttons/animated_floating_buttons.dart';
 
 import '../database/api.dart';

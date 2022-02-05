@@ -62,7 +62,7 @@ class _NavigationState extends State<Navigation> {
   void initState() {
     super.initState();
     widget.apiDB.initAsync();
-    AutoUpdate.fetchGithubApk("ehoraizon", "test").then((value) {
+    AutoUpdate.fetchGithub("ehoraizon", "anime_seasons").then((value) {
       SchedulerBinding.instance?.addPostFrameCallback((_) {
         showUpdateDialog(context, value);
       });
@@ -210,23 +210,25 @@ class _NavigationState extends State<Navigation> {
           } else if (snapshot.hasError) {
             return Scaffold(
                 body: Center(
-              child: Column(
-                children: [
-                  SvgPicture.asset(
-                    "assets/icons/main_icon.svg",
-                    width: MediaQuery.of(context).size.width / 1.3,
-                    height: MediaQuery.of(context).size.height / 1.3,
-                  ),
-                  const Text(
-                    "ERROR UNABLE TO OPEN DB",
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red),
-                  )
-                ],
+                    child: Column(children: [
+              SvgPicture.asset(
+                "assets/icons/main_icon.svg",
+                width: MediaQuery.of(context).size.width / 1.3,
+                height: MediaQuery.of(context).size.height / 1.3,
               ),
-            ));
+              Text(
+                "ERROR UNABLE TO OPEN DB",
+                style: TextStyle(
+                    fontSize: Platform.isWindows ? 20 : 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red),
+              ),
+              if (Platform.isWindows)
+                const Text(
+                  "RUN AS ADMINISTRATOR",
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                )
+            ])));
           } else {
             return Scaffold(
                 body: Container(

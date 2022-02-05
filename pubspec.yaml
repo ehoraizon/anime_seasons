@@ -5,6 +5,13 @@ description: A seasonal anime watching app.
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
+msix_config:
+  display_name: Anime Seasons
+  publisher_display_name: Erich Garcia
+  identity_name: com.egarcia.anime-seasons
+  msix_version: 1.0.0.0
+  logo_path: ./assets/icons/main_icon.png
+  capabilities: "internetClient,packageWriteRedirectionCompatibilityShim,broadFileSystemAccess,runFullTrust,allowElevation"
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
 # followed by an optional build number separated by a +.
@@ -15,7 +22,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
@@ -32,7 +39,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  sqflite: ^2.0.1
+  sqflite: ^2.0.2
   http: ^0.13.4
   beautiful_soup_dart: ^0.2.0
   flutter_svg: ^1.0.0
@@ -47,7 +54,7 @@ dependencies:
   sqflite_common_ffi: ^2.1.0+1
   side_navigation: ^0.0.7
   dart_vlc: ^0.1.8
-  auto_update: ^0.0.1
+  auto_update: ^0.0.3
 
 dev_dependencies:
   flutter_test:

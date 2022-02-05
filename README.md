@@ -2,18 +2,20 @@
 
 Anime watching app. Catalog based on jikan v3 api. 
 
+Launch windows app as **administrator**!
+
 # Features
 
 * no **ads**
 * updates without official application stores
-* sub spanish
-* sub english
+* sub Spanish
+* sub English
 
 # ToDo
 
 * [ ] Add more video servers.
-* [ ] Windows app.
+* ✅ Windows app.
 * [ ] List of anime suggestions in each anime page.
 * [ ] Clean the code.
-* [ ] Imprube sqlite db.
+* [ ] Improve sqlite db.
 * [ ] Save watched chapters.

@@ -42,7 +42,7 @@ class _AnimePlayerDesktopState extends State<AnimePlayerDesktop> {
                 // width: 1080.0,
                 // scale: 1.0, // default
               )
-            : SizedBox());
+            : const SizedBox());
   }
 
   @override
