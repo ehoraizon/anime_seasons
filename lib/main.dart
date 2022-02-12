@@ -22,7 +22,6 @@ Future main() async {
     databaseFactory = databaseFactoryFfi;
     DartVLC.initialize();
   }
-  // ApiDB apiDB =
   runApp(const MyApp());
 }
 

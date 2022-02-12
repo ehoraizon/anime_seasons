@@ -8,6 +8,7 @@ import 'package:anime_seasons/database/fembed.dart';
 import 'package:anime_seasons/models/models.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:http/http.dart' as http;
+import 'package:auto_update/auto_update.dart';
 
 import "./errors.dart";
 
@@ -22,10 +23,6 @@ class ApiDB {
   DateTime lastJikanCall = DateTime.now().subtract(const Duration(minutes: 1));
   int requestMinuteCount = 0;
   String jikanApi = "https://api.jikan.moe/v3";
-  // String englishSub = "https://www.animefrenzy.net";
-  // String mp4DirectLink = ".mp4upload.com:282/d/";
-  // RegExp mp4RegExToken = RegExp("[a-z0-9]{56}");
-  // RegExp mp4RegExPrefix = RegExp(r"embed\|[a-z0-9]+");
   AnimeFrenzy animeFrenzy = AnimeFrenzy();
   AnimeFLV animeFLV = AnimeFLV();
   Fembed fembed = Fembed();
@@ -36,17 +33,20 @@ class ApiDB {
   int _amountPicture = 0;
   int _amountEpisode = 0;
 
-  // ApiDB() :
-  //   _db = openDatabase("cache.sql", onCreate: (db, vers){}, onOpen: (db){}),
-  //   lastJikanCall = DateTime.now().subtract(const Duration(minutes: 1));
-
-  // Future<void> fabric() async {
-  //   await _db;
-  // }
-
   Future<bool> initAsync() async {
+    String dbFilePath = "cache.sql";
+    if (Platform.isWindows) {
+      dbFilePath = await AutoUpdate.getDocumentsFolder() +
+          "\\Anime Seasons\\" +
+          dbFilePath;
+      File file = File(dbFilePath);
+      if (!(await file.exists())) {
+        file.create(recursive: true);
+      }
+    }
+
     _db =
-        await openDatabase("cache.sql", version: 1, onCreate: (db, vers) async {
+        await openDatabase(dbFilePath, version: 1, onCreate: (db, vers) async {
       await db.execute(
           "CREATE TABLE options (id INTEGER PRIMARY KEY , limit_anime INTEGER DEFAULT 500, limit_pictures INTEGER DEFAULT 800, limit_episode INTEGER DEFAULT 200, language TEXT)");
       await db.execute(

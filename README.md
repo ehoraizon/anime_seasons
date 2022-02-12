@@ -1,8 +1,6 @@
 # Anime Seasons
 
-Anime watching app. Catalog based on jikan v3 api. 
-
-Launch windows app as **administrator**!
+Anime watching app. Catalog based on jikan v3 api.
 
 # Features
 

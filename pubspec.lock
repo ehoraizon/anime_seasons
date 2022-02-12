@@ -56,7 +56,7 @@ packages:
       name: auto_update
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.3"
+    version: "0.0.4"
   badges:
     dependency: "direct main"
     description:
@@ -580,7 +580,7 @@ packages:
       name: sqflite_common_ffi
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0+1"
+    version: "2.1.0+2"
   sqlite3:
     dependency: transitive
     description:
